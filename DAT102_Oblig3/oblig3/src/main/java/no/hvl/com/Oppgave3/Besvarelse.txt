@@ -1,0 +1,49 @@
+
+Oppgave a) 
+
+Det vil nok finnes ulike algoritmer for å finne det.
+Ved bruk av en nøstet for løkke vil du ha O(n^2) iterasjoner, her vil tallene sammenlignes en gang hver iterasjon så det blir også m^2 sammenligninger, -1 for den første verdien du ikke må sammenligne.
+Hadde vi vist at matrisen var sortert hadde vi i bestefall hatt O(1) og ingen sammenligninger, vi kunne bare returnert den siste plassen. Men det er ikke realistisk
+
+
+Oppgave b) 
+Vi bruker tidskompleksiteten vi fant i oppgaven over 
+100 * 100 = 0.016ms
+1000 * 1000 = ?
+1000 * 1000 / 100 * 100 = 10^6 / 10^4 = 100
+tiden vil øke kvadratisk så kjøretiden vil øke 100^2 = 10000
+0.016 * 10 000 = 160ms
+
+
+Oppgave c) 
+Skjønte ikke helt oppgaven. Men tolker det som at vi har en tabell med heltall som starter på indx 1?
+Du må iterere igjenom tabellen 1 gang for å sjekke, så du vil få O(n), sammenligningene blir da n og -1 for første element man sitter som defauklt. 
+
+Oppgave d)
+bruker tall fra c 
+10 000 = 0.012ms
+1 000 000 = ?
+1000000/10000 = 100
+1.2ms 
+
+Oppgave e) 
+i.) 
+første løkke kjører n ganger
+ytre løkken kjøres, n ganger, indre løkke kjøres j+1 ganger for hver j pluss summering som gir n^2? 
+2n + n^2 tilordninger
+O (n^2) bryr seg bare om den høyeste "iterasjonen" 
+
+ii.) 
+vi trenger ikke to løkker for å sette en verdi i en tabell til noe annet. Man kan heller sitte det nye elementet til å være det forgje pluss tab verdien.
+nå "bygger den opp" verdien hver gang
+a1 = x
+a2 = x + y
+a3 = x + y + z 
+vi kan heller får den til å være 
+ai = ai-1 + ny verdi.
+
+noe som dette sum0 = tab0 (første leddet må få verdi for at det skal gå)
+for int j = 1; j < n; j++
+sum j = sumj-1 0 tabj
+
+den vil korte ned fra n^2 til n

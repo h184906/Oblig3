@@ -1,0 +1,98 @@
+
+Oppgave D)
+
+1. inneholder
+
+TabellMengde
+	Best case: O(1) Hvis elementet er det første i arrayet.
+	Worst case: O(n) Hvis elementet ikke finnes eller er det siste i arrayet.
+	Begrunnelse: Går lineært gjennom arrayet og sjekker hvert element.
+
+LenketMengde
+    Best case: O(1) Hvis elementet er i første node.
+    Worst case: O(n) Hvis elementet ikke finnes eller er i siste node.
+    Begrunnelse: Må iterere gjennom hele NodeListen for å finne elementet.
+
+
+2. erDelmengdeAv
+
+TabellMengde
+	Best case: O(n) Må sjekke hvert element
+	Worst case: O(nm) Der m blir antallet elementer i annenMengde.
+	Begrunnelse: For hvert element i denne mengden sjekkes om det finnes i annenMengde ved hjelp av inneholder(), som jeg er ganske sikker på blir O(m).
+
+LenketMengde
+	Best case: O(n) Må sjekke hvert element
+	Worst case: O(nm) Samme begrunnelse som for TabellMengde.
+	Begrunnelse: Itererer gjennom listen og kaller inneholder(), som igjen er O(m).
+
+3. erLik
+
+TabellMengde
+	Best case: O(1) Hvis mengdene har ulik størrelse.
+	Worst case: O(nm) Må sjekke at alle elementer i annenMengde finnes i orginale mengden.
+	Begrunnelse: Itererer gjennom mengdenb og kaller inneholder() for annenMengde.
+
+LenketMengde
+	Best case: O(1) Hvis mengdene har ulik størrelse.
+	Worst case: O(nm) Samme som for TabellMengde.
+	Begrunnelse: Likt som TabellMengde.
+
+4. union
+
+TabellMengde
+	Best case: O(1) Hvis alle elementer i annenMengde er unike.
+	Worst case: O(nm) Hvis alle elementer må sjekkes før de legges til.
+	Begrunnelse: Går gjennom begge mengder og legger til elementene.
+
+LenketMengde
+	Best case: O(1) Hvis alle elementer er unike.
+	Worst case: O(nm) Hvis alle elementer må sjekkes før de legges til.
+	Begrunnelse: Samme som for TabellMengde.
+
+5. fjern
+
+TabellMengde
+	Best case: O(1) Hvis elementet er første i arrayet.
+	Worst case: O(n) Hvis elementet er sist eller ikke finnes (må iterere hele arrayet).
+	Begrunnelse: Etter å finne elementet, må alle etterfølgende elementer flyttes.
+
+LenketMengde
+	Best case: O81 Hvis elementet er i første node.
+	Worst case: O(n) Hvis elementet er sist eller ikke finnes.
+	Begrunnelse: Må iterere gjennom listen for å finne elementet.
+
+￼
+
+Selvom det blir sammekjøretid så vil de ulike måtene ha ulike fordeler
+TabellMengde har en fordel når det gjelder tilgangstid i enkelte tilfeller.
+LenketMengde har en fordel når elementer ofte legges til eller fjernes fra starten av strukturen.
+
+Ble veldig merkelig når kopiert i en txt fil, tabell opprettet fra https://www.tablesgenerator.com for å lage en "penere" tabelloversikt
+
+\begin{table}[]
+\begin{tabular}{lllll}
+Metode                   & TabellMengde (Best) & TabellMengde (Worst) & LenketMengde (Best) & LenketMengde (Worst) \\
+inneholder                      & O(1)                & O(n)                 & O(1)                & O(n)                 \\
+erDelmengdeAv                   & O(1)                & O(n \cdot m)         & O(1)                & O(n \cdot m)         \\
+erLik                           & O(1)                & O(n \cdot m)         & O(1)                & O(n \cdot m)         \\
+union                           & O(m + n)            & O(n \cdot m)         & O(m + n)            & O(n \cdot m)         \\
+fjernes                         & O(1)                & O(n)                 & O(1)                & O(n)                
+\end{tabular}
+\end{table}
+
+
+
+
+E) 
+Det ser ut som at de innebygde metodene fra hashset har O(1) og O(n) som gjennomsnittlig istede for O(n) og O(nm) så det gjør en betydlig forskjell på kjøretiden i større programmer. 
+
+når jeg kjører testene i terminalen ser vi også forskjell på kjøretiden selvom det er små sett:
+1.332 s for lenketMengde 
+1.217 s for tabellMengde  
+1.135 s for SetToMengde
+
+
+
+F) 
+
